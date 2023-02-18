@@ -1,0 +1,46 @@
+{
+  "name": "ksg-worker",
+  "version": "1.0.0",
+  "description": "Kuantum Siber Güvenlik Cihazı - Worker module",
+  "main": "src/index.js",
+  "bin": "src/index.js",
+  "author": "Kuantum Siber Güvenlik",
+  "license": "KSG-EULA",
+  "engines": {
+    "node": ">=12.0.0"
+  },
+  "scripts": {
+    "start": "pm2 start ecosystem.config.json --no-daemon",
+    "dev": "cross-env NODE_ENV=development nodemon src/index.js",
+    "debug": "cross-env NODE_ENV=development nodemon --inspect src/index.js",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "prettier": "prettier --check **/*.js",
+    "prettier:fix": "prettier --write **/*.js"
+  },
+  "pkg": {
+    "targets": [
+      "linux"
+    ]
+  },
+  "dependencies": {
+    "cross-env": "^7.0.3",
+    "elfy": "^1.0.0",
+    "joi": "^17.6.0",
+    "jsonpath-plus": "^6.0.1",
+    "node-schedule": "^2.1.0",
+    "socket.io-client": "^4.5.1",
+    "winston": "^3.7.2"
+  },
+  "devDependencies": {
+    "eslint": "^8.12.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-node": "^4.1.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "nodemon": "^2.0.15",
+    "prettier": "^2.6.2"
+  }
+}
